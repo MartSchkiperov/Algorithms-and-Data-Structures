@@ -31,7 +31,7 @@ public class WhileExamples {
         /*
         While with condition, leaves cycle after filling condition
          */
-        System.out.println("while with condition\n====");
+        System.out.println("while (with condition)\n====");
         System.out.println("07:00 wake up");
         i = 8;
 
