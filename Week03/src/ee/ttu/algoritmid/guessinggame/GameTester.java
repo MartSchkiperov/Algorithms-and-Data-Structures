@@ -23,19 +23,19 @@ public class GameTester {
 
             Fruit testedFruit;
             if (i == 0) {
-                testedFruit = fruitArray[5];
+                testedFruit = new Fruit("Ploom", 50);
                 testingMessage = "\nSmallest mass fruit: ";
             }
             else if (i == 1) {
-                testedFruit = fruitArray[2];
+                testedFruit = new Fruit("Greip", 250);
                 testingMessage = "Biggest mass fruit: ";
             }
             else if (i == 2) {
-                testedFruit = fruitArray[0];
+                testedFruit = new Fruit("Apelsin", 150);
                 testingMessage = "First fruit in array: ";
             }
             else if (i == 3) {
-                testedFruit = fruitArray[7];
+                testedFruit = new Fruit("Õun", 110);
                 testingMessage = "Last fruit in array: ";
             }
             else testedFruit = fruitArray[rand.nextInt(fruitArray.length)];
