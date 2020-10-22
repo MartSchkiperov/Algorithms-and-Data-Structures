@@ -17,7 +17,7 @@ public class ThrowExceptions {
 
         Student errorStudent = new Student(-1, null, ""); // try write in studentCode null - doesnt compile!
         System.out.println("\nHow to throw exceptions on attribute data error student object:\n===");
-        if (errorStudent.getStudentFirstName() == null) {
+        if (errorStudent.getStudentFirstName() == null) { // you could add conditions separating with Java OR: ||
             throw new IllegalArgumentException();
         }
 
