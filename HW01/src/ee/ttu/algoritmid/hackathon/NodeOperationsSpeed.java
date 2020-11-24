@@ -5,39 +5,57 @@ import java.util.*;
 public class NodeOperationsSpeed {
 
     public static void main(String[] args) {
-        SmallNode s = new SmallNode();
+        SmallNode s = new SmallNode(new Participant(0));
+        s.list.add(new Participant(5));
         int thousandCycles = 2_000_000_000;
 
         long startTime = System.currentTimeMillis();
         for (int i = 0; i < thousandCycles; i++) {
             for (int j = 0; j < 1000; j++) {
-                int a = s.getValue() + 5;
+                int a = s.getExtroversion1() + 5;
             }
         }
         long stopTime = System.currentTimeMillis();
-        System.out.println("getValue(): " + (stopTime - startTime) + "ms");
+        System.out.println("s.getExtroversion1(): " + (stopTime - startTime) + "ms");
 
         startTime = System.currentTimeMillis();
         for (int i = 0; i < thousandCycles; i++) {
             for (int j = 0; j < 1000; j++) {
-                int a = (int) s.getList().get(0) + 5;
+                int a = s.getList().get(0).getExtroversion2() + 5;
             }
         }
         stopTime = System.currentTimeMillis();
-        System.out.println("getList().get(0): " + (stopTime - startTime) + "ms");
+        System.out.println("s.getList().get(0).getExtroversion2(): " + (stopTime - startTime) + "ms");
     }
 
 
     public static class SmallNode {
-        int value = 5;
-        List<Integer> list = Arrays.asList(1, 2);
+        int extroversion = 5;
+        Participant participant;
+        List<Participant> list = new ArrayList<>();
 
-        public int getValue() {
-            return value;
+        public SmallNode(Participant patricipant) {
+            this.participant = participant;
         }
 
-        public List getList() {
+        public int getExtroversion1() {
+            return extroversion;
+        }
+
+        public List<Participant> getList() {
             return list;
+        }
+    }
+
+    public static class Participant {
+        int extroversion;
+
+        public Participant(int extroversion) {
+            this.extroversion = extroversion;
+        }
+
+        public int getExtroversion2() {
+            return extroversion;
         }
     }
 }
