@@ -1,5 +1,3 @@
-package ee.ttu.algoritmid.hackathon;
-
 import java.util.*;
 
 public class SimpleEntryHashMap {
