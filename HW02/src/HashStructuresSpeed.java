@@ -12,7 +12,6 @@ public class HashStructuresSpeed {
         SimpleEntry[][] simpleEntryArray = new SimpleEntry[1000][1000];
 
         List<SimpleEntry> simpleEntryList = new ArrayList<>();
-
         for (int i = 0; i < 10; i++) {
             simpleEntryList.add(new SimpleEntry(i, i+1));
         }
@@ -51,8 +50,7 @@ public class HashStructuresSpeed {
 
     public static String numberToString(long number) {
         String number2string = number % 1000 + "";
-        if (number2string.length() == 0) number2string = "000";
-        else if (number2string.length() == 1) number2string = "00" + number2string;
+        if (number2string.length() == 1) number2string = "00" + number2string;
         else if (number2string.length() == 2) number2string = "0" + number2string;
         return number / 1000 + " " + number2string;
     }
